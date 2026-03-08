@@ -1,0 +1,8 @@
+# Ignore model weights
+models/
+*.pt
+*.pth
+
+# Python cache
+__pycache__/
+*.pyc

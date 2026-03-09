@@ -36,6 +36,11 @@ for video in os.listdir(config.VIDEO_FOLDER):
 
     csv_path = os.path.join(config.FEATURE_FOLDER, os.path.splitext(video)[0] + ".csv")
 
+    #skip already processed videos
+    if os.path.exists(csv_path):
+        print("Skipping already processed video:", video)
+        continue
+
     print("Processing video:", video)
 
     cap = cv2.VideoCapture(video_path)

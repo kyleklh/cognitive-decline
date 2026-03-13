@@ -9,6 +9,7 @@ src/__pycache__/
 
 # ignore videos
 videos/
+test_videos/
 # videos_train/
 # videos_test/
 

@@ -3,7 +3,14 @@ import math
 
 def exit_center(exit_region):
     x1, y1, x2, y2 = exit_region
-    return (x1 + x2) / 2, (y1 + y2) / 2
+
+    x_min = min(x1, x2)
+    x_max = max(x1, x2)
+
+    y_min = min(y1, y2)
+    y_max = max(y1, y2)
+
+    return (x_min + x_max) / 2, (y_min + y_max) / 2
 
 
 def mask_centroid(mask):

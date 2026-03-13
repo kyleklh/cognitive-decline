@@ -41,15 +41,17 @@ for video in os.listdir(config.VIDEO_FOLDER):
         print("Skipping already processed video:", video)
         continue
 
-    print("Processing video:", video)
-
+    print(f"Extracting from {video}")
+    
     cap = cv2.VideoCapture(video_path)
     fps = cap.get(cv2.CAP_PROP_FPS)
     cap.release()
 
-    dt = 1.0 / fps if fps > 0 else 1 / 30
+    dt = (1.0 / fps if fps > 0 else 1 / 30) * 5  # multiply by 5 for frame skip
 
     prev_d = None
+    prev_cx = None
+    prev_cy = None
     dwell_time = 0
     entry_count = 0
     was_near = False
@@ -61,7 +63,14 @@ for video in os.listdir(config.VIDEO_FOLDER):
         writer = csv.writer(f)
         writer.writerow(["d_t", "tau_t", "n_t", "v_t"])
 
+        frame_count = 0
         for r in results:
+            frame_count += 1
+            
+            # sample every 5 frames to speed up
+            if frame_count % 5 != 0:
+                continue
+            
             d_t = None
             v_t = 0
 
@@ -74,6 +83,14 @@ for video in os.listdir(config.VIDEO_FOLDER):
                 if centroid is not None:
                     
                     cx, cy = centroid
+
+                    #moving average smoothing
+                    if prev_cx is not None:
+                        cx = 0.7 * prev_cx + 0.3 * cx
+                        cy = 0.7 * prev_cy + 0.3 * cy
+
+                    prev_cx = cx
+                    prev_cy = cy
                     
                     #distance to exit
                     d_t = utils.distance(cx, cy, exit_cx, exit_cy)
@@ -98,9 +115,3 @@ for video in os.listdir(config.VIDEO_FOLDER):
             writer.writerow([d_t, dwell_time, entry_count, v_t])
 
 print("Feature extraction complete")
-
-
-
-
-
-

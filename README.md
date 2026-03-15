@@ -1,5 +1,3 @@
-# cognitive-decline
-apsc103 - cognitive decline segmentation model
 <a id="readme-top"></a>
 
 [![Contributors][contributors-count-shield]][contributors-url]
@@ -9,7 +7,7 @@ apsc103 - cognitive decline segmentation model
 
 <br />
 <div align="center">
-<h2 align="center">Cognitive Decline Behavior Segmentation</h3>
+<h2 align="center">APSC103: Cognitive Decline Behavior Segmentation</h3>
 
 <p align="center">
 Video-based behavior feature extraction and HMM-based classification for normal, borderline, and exit-seeking movement patterns.
@@ -175,29 +173,7 @@ Expected output classes:
 - [x] Add behavior summary scoring (`normal`, `borderline`, `exit_seek`)
 - [x] Add timeline and score visualization
 - [ ] Add reproducible environment lockfile (`requirements.txt` / `environment.yml`)
-- [ ] Add automated evaluation script and metrics report
 - [ ] Add unit tests for feature and scoring helpers
-- [ ] Add CI checks for lint + basic smoke tests
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Top contributors
-
-<a href="https://github.com/kyleklh/cognitive-decline/graphs/contributors">
-	<img src="https://github.com/kyleklh.png?size=64" alt="kyleklh" width="64" height="64" style="border-radius: 50%;" />
-</a>
-<a href="https://github.com/ekmrwg">
-	<img src="https://github.com/ekmrwg.png?size=64" alt="ekmrwg" width="64" height="64" style="border-radius: 50%;" />
-</a>
-<a href="https://github.com/elhabashnehali-rgb">
-	<img src="https://github.com/elhabashnehali-rgb.png?size=64" alt="elhabashnehali-rgb" width="64" height="64" style="border-radius: 50%;" />
-</a>
-<a href="https://github.com/RoyShomron">
-	<img src="https://github.com/RoyShomron.png?size=64" alt="RoyShomron" width="64" height="64" style="border-radius: 50%;" />
-</a>
-<a href="https://github.com/emmamacchia07">
-	<img src="https://github.com/emmamacchia07.png?size=64" alt="emmamacchia07" width="64" height="64" style="border-radius: 50%;" />
-</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

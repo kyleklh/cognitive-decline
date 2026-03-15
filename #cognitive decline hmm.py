@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 #cognitive decline hmm
+=======
+#cognitive_decline_hmm.py
+>>>>>>> Stashed changes
 
 #imports
 import numpy as np
@@ -33,7 +37,11 @@ class CognitiveDeclineHMM:
         # Standardize units (pixels vs seconds)
         X_combined = np.vstack(all_features)
         X_scaled= self.scaler.fit_transform(X_combined)
+<<<<<<< Updated upstream
         self.model.fit(X, lengths)
+=======
+        self.model.fit(X_scaled, lengths)
+>>>>>>> Stashed changes
         self.is_trained = True
 
     def analyze_smoothed(self, csv_path, window=20 ):
@@ -46,8 +54,17 @@ class CognitiveDeclineHMM:
         return smoothed_states, smoothed_probs
 
 def main():
+<<<<<<< Updated upstream
     train_files = ["train_seq1.csv", "train_seq2.csv"] 
     test_file = "patient_test_data.csv"
+=======
+    data_dir = "C:/Users/" 
+    train_files = [
+    os.path.join(data_dir, "training_file.csv"),
+    os.path.join(data_dir, "training_file.csv"),
+    ] 
+    test_file = os.path.join(data_dir, "testing_file.csv")
+>>>>>>> Stashed changes
 
     hmm = CognitiveDeclineHMM()
 
@@ -61,7 +78,11 @@ def main():
         primary_state = hmm.state_labels[np.bincount(states).argmax()]
 
         print(f"\n{'='*45}")
+<<<<<<< Updated upstream
         print(f"COGNITIVE ANALYSIS REPORT: {test_file}")
+=======
+        print(f"COGNITIVE ANALYSIS OVERVIEW: {test_file}")
+>>>>>>> Stashed changes
         print(f"{'-'*45}")
         print(f"Overall Exit-Seeking Probability : {avg_exit_seeking_prob:.2%}")
         print(f"Time Spent in Exit-Seeking State : {time_spent_exit_seeking:.1f}%")

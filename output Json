@@ -1,0 +1,11 @@
+{
+    "finalTimestamp": 5,
+    "state": "S3_ExitSeeking",
+    "confidence": 0.9634,
+    "finalFeatures": {
+        "distanceToExit": 0.3,
+        "dwellTimeNearExit": 4.5,
+        "numberOfEntries": 3,
+        "velocityTowardExit": 1.0
+    }
+}

@@ -123,6 +123,7 @@ Follow the steps below to run the full pipeline locally.
 
 4. Ensure model files are available in `models/`
 	 * `sam3.pt` for feature extraction
+	 * `sam3.pt` is available from Hugging Face: [facebook/sam3](https://huggingface.co/facebook/sam3)
 	 * `hmm_model.pkl`, `scaler.pkl`, `hmm_meta.pkl` after training
 
 5. Configure experiment constants in `src/config.py`

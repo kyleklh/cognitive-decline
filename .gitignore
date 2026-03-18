@@ -1,5 +1,8 @@
 # Ignore model weights
 models/
+!models/
+models/*
+!models/.gitkeep
 *.pt
 *.pth
 

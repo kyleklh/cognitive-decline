@@ -1,11 +1,16 @@
-#find right coordinates for exit region and test by drawing on video frames
+import os
+import sys
 
 import cv2
-import os
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.dirname(CURRENT_DIR)
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
 import config
 import utils
 
-# Mouse callback function
 def mouse_callback(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDBLCLK:
         print(f"x={x}, y={y}")
